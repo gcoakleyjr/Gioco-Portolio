@@ -1750,7 +1750,7 @@ footer .footer-circle {
      }
 
      .modal .modal-description .text {
-          padding-bottom: 0;
+          padding-bottom: 12px;
           font-size: 1.6vw;
      }
 }
@@ -1892,6 +1892,14 @@ footer .footer-circle {
           font-size: 1.4vw;
      }
 
+     .project-preview i {
+          padding-bottom: var(--spacer)
+     }
+
+     .modal .slide-item-visible {
+          display: block;
+          animation: none;
+     }
 
 }
 
