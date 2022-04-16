@@ -21,7 +21,7 @@ const aboutShape1 = document.querySelector(".ab-sh-1")
 
 const openPortfolioModal = document.querySelectorAll(".gallery-image")
 const closePortfolioModal = document.querySelectorAll(".close-modal")
-const modal = document.querySelectorAll(".modal")
+let modal = document.querySelectorAll(".modal")
 
 
 
@@ -56,16 +56,16 @@ openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) =
     modal[index].classList.add("modal-active")
 
     modal[index].showModal()
-    const slides = modal[index].querySelectorAll(".slide-item")
+    let slides = modal[index].querySelectorAll(".slide-item")
 
-    const slideNext = modal[index].querySelectorAll(".slide-next")
+    let slideNext = modal[index].querySelectorAll(".slide-next")
     slideNext.forEach(btn => btn.addEventListener("click", () => moveToNextSlide(slides)))
 
-    const slidePrev = modal[index].querySelectorAll(".slide-prev")
+    let slidePrev = modal[index].querySelectorAll(".slide-prev")
     slidePrev.forEach(btn => btn.addEventListener("click", () => moveToPrevSlide(slides)))
 
 
-    const slideActions = modal[index].querySelector(".slide-actions")
+    let slideActions = modal[index].querySelector(".slide-actions")
 
     if (slides.length < 2) {
         slideActions.style.display = "none"

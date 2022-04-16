@@ -1753,6 +1753,17 @@ footer .footer-circle {
           padding-bottom: 12px;
           font-size: 1.6vw;
      }
+
+     .project-preview {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+     }
+
+     .project-preview i {
+          padding-right: 14px;
+          padding-bottom: 0;
+     }
 }
 
 @media screen and (max-width: 800px) {
@@ -1892,12 +1903,13 @@ footer .footer-circle {
           font-size: 1.4vw;
      }
 
-     .project-preview i {
-          padding-bottom: var(--spacer)
-     }
+
 
      .modal .slide-item-visible {
-          display: block;
+          animation: none;
+     }
+
+     .modal-active {
           animation: none;
      }
 
@@ -1988,6 +2000,22 @@ footer .footer-circle {
 
      .modal .modal-description button {
           width: 5vw;
+     }
+
+     .project-preview {
+          flex-direction: column;
+     }
+
+     .project-preview i {
+          margin-bottom: 12px;
+          padding-right: 0;
+     }
+
+     .modal .project-preview .preview-btn {
+          font-size: .7rem;
+          width: 74px;
+          height: 43px;
+          border-radius: 18px;
      }
 }
 
