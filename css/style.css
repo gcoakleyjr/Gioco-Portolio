@@ -1905,14 +1905,6 @@ footer .footer-circle {
 
 
 
-     .modal .slide-item-visible {
-          animation: none;
-     }
-
-     .modal-active {
-          animation: none;
-     }
-
 }
 
 @media screen and (max-width: 600px) {

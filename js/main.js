@@ -57,13 +57,18 @@ openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) =
 
     modal[index].showModal()
     let slides = modal[index].querySelectorAll(".slide-item")
+    console.log(slides)
 
     let slideNext = modal[index].querySelectorAll(".slide-next")
     slideNext.forEach(btn => btn.addEventListener("click", () => moveToNextSlide(slides)))
 
+
+
     let slidePrev = modal[index].querySelectorAll(".slide-prev")
     slidePrev.forEach(btn => btn.addEventListener("click", () => moveToPrevSlide(slides)))
 
+    console.log(slidePrev)
+    console.log(slideNext)
 
     let slideActions = modal[index].querySelector(".slide-actions")
 
@@ -77,6 +82,7 @@ openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) =
 
 closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
     e.preventDefault()
+
 
     modal[index].close()
     modal[index].classList.remove("modal-active")
@@ -96,7 +102,7 @@ closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) 
 function hideAllSlides(x) {
     for (let slide of x) {
         slide.classList.remove("slide-item-visible")
-        slide.classList.add("slide-item-hidden")
+        // slide.classList.add("slide-item-hidden")
     }
 }
 
@@ -111,7 +117,7 @@ function moveToNextSlide(x) {
         slidePosition++
     }
 
-    x[slidePosition].classList.remove("slide-item-hidden")
+    //x[slidePosition].classList.remove("slide-item-hidden")
     x[slidePosition].classList.add("slide-item-visible")
 }
 
@@ -125,7 +131,7 @@ function moveToPrevSlide(x) {
         slidePosition--
     }
 
-    x[slidePosition].classList.remove("slide-item-hidden")
+    //x[slidePosition].classList.remove("slide-item-hidden")
     x[slidePosition].classList.add("slide-item-visible")
 }
 
