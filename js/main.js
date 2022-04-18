@@ -59,13 +59,13 @@ openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) =
     let slides = modal[index].querySelectorAll(".slide-item")
     console.log(slides)
 
-    let slideNext = modal[index].querySelectorAll(".slide-next")
-    slideNext.forEach(btn => btn.addEventListener("click", () => moveToNextSlide(slides)))
+    let slideNext = modal[index].querySelector(".slide-next")
+    slideNext.addEventListener("click", () => moveToNextSlide(slides))
 
 
 
-    let slidePrev = modal[index].querySelectorAll(".slide-prev")
-    slidePrev.forEach(btn => btn.addEventListener("click", () => moveToPrevSlide(slides)))
+    let slidePrev = modal[index].querySelector(".slide-prev")
+    slidePrev.addEventListener("click", () => moveToPrevSlide(slides))
 
     console.log(slidePrev)
     console.log(slideNext)

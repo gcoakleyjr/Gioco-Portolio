@@ -710,23 +710,28 @@ nav.open .links {
      z-index: 61;
 }
 
-.card-wrap:hover .card {
+.card-wrap:hover .card,
+.card-wrap:active .card {
      transform: translateY(-8px);
 }
 
-.card-wrap:hover .card:after {
+.card-wrap:hover .card:after,
+.card-wrap:active .card:after {
      height: 8px;
 }
 
-.card-wrap:hover .card-bg-img {
+.card-wrap:hover .card-bg-img,
+.card-wrap:active .card-bg-img {
      opacity: 0;
 }
 
-.card-wrap:hover .card-content {
+.card-wrap:hover .card-content,
+.card-wrap:active .card-content {
      opacity: 1;
 }
 
-.card-wrap:hover .card {
+.card-wrap:hover .card,
+.card-wrap:active .card {
      box-shadow: 0 7px 15px rgb(228, 228, 228);
 }
 
