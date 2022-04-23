@@ -46,50 +46,129 @@ $('.grid').isotope({
 });
 
 
+function getRotatableIndex(curr, length, inc) {
+    if (inc > 0) {
+        if (curr + inc > length - 1) {
+            return 0
+        } else {
+            return curr + inc
+        }
+    } else {
+        if (curr + inc < 0) {
+            return length - 1
+        } else {
+            return curr + inc
+        }
+    }
+}
 
 // PORTFOLIO MODAL
-let slidePosition = 0
 
-openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
-    e.preventDefault()
+openPortfolioModal.forEach((grid, index) => {
+    grid.addEventListener('click', (e) => {
+        e.preventDefault()
 
-    modal[index].classList.add("modal-active")
+        const currModal = modal[index];
 
-    modal[index].showModal()
-    let slides = modal[index].querySelectorAll(".slide-item")
-    console.log(slides)
+        currModal.classList.add("modal-active")
 
-    let slideNext = modal[index].querySelector(".slide-next")
-    slideNext.addEventListener("click", () => moveToNextSlide(slides))
+        currModal.showModal()
+        let slides = Array.from(currModal.querySelectorAll(".slide-item"))
+        console.log(slides)
 
-
-
-    let slidePrev = modal[index].querySelector(".slide-prev")
-    slidePrev.addEventListener("click", () => moveToPrevSlide(slides))
-
-    console.log(slidePrev)
-    console.log(slideNext)
-
-    let slideActions = modal[index].querySelector(".slide-actions")
-
-    if (slides.length < 2) {
-        slideActions.style.display = "none"
-    } else {
-        return
-    }
-
-}))
-
-closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
-    e.preventDefault()
+        let slideNext = currModal.querySelector(".slide-next")
+        let slidePrev = currModal.querySelector(".slide-prev")
+        let modalCloseBtn = currModal.querySelector(".close-modal")
 
 
-    modal[index].close()
-    modal[index].classList.remove("modal-active")
+        let currSlideIdx = slides.findIndex(item => item.classList.contains('slide-item-visible'));
+
+        const nextListener = () => {
+            slides[currSlideIdx].classList.toggle('slide-item-visible');
+            currSlideIdx = getRotatableIndex(currSlideIdx, slides.length, 1)
+            slides[currSlideIdx].classList.toggle('slide-item-visible')
+        }
+
+        const prevListener = () => {
+            slides[currSlideIdx].classList.toggle('slide-item-visible');
+            currSlideIdx = getRotatableIndex(currSlideIdx, slides.length, -1)
+            console.log(currSlideIdx)
+            slides[currSlideIdx].classList.toggle('slide-item-visible')
+        }
+
+
+        slideNext.addEventListener("click", nextListener)
+        slidePrev.addEventListener("click", prevListener)
+
+        modalCloseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            slideNext.removeEventListener('click', nextListener)
+            slidePrev.removeEventListener('click', prevListener)
+            currModal.close()
+        })
+    })
+})
+
+// closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
+//     e.preventDefault()
+
+//     const currModal = modal[index];
+//     currModal.close()
+//     currModal.classList.remove("modal-active")
+// }))
+
+
+// let slidePosition = 0
+
+// openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
+//     e.preventDefault()
+
+//     const currModal = modal[index];
+
+//     currModal.classList.add("modal-active")
+
+//     currModal.showModal()
+//     let slides = currModal.querySelectorAll(".slide-item")
+//     console.log(slides)
+
+//     let slideNext = currModal.querySelector(".slide-next")
+//     slideNext.addEventListener("click", () => moveToNextSlide(slides))
 
 
 
-}))
+//     let slidePrev = currModal.querySelector(".slide-prev")
+//     slidePrev.addEventListener("click", () => moveToPrevSlide(slides))
+
+//     console.log(slidePrev)
+//     console.log(slideNext)
+
+//     let slideActions = currModal.querySelector(".slide-actions")
+
+//     if (slides.length < 2) {
+//         slideActions.style.display = "none"
+//     } else {
+//         return
+//     }
+
+// }))
+
+// closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
+//     e.preventDefault()
+
+//     const currModal = modal[index];
+//     currModal.close()
+//     currModal.classList.remove("modal-active")
+
+//     let slideNext = currModal.querySelector(".slide-next")
+//     slideNext.removeEventListener("click", () => { })
+
+
+
+//     let slidePrev = currModal.querySelector(".slide-prev")
+//     slidePrev.removeEventListener("click", () => { })
+
+
+// }))
 
 
 
@@ -99,41 +178,41 @@ closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) 
 
 
 
-function hideAllSlides(x) {
-    for (let slide of x) {
-        slide.classList.remove("slide-item-visible")
-        // slide.classList.add("slide-item-hidden")
-    }
-}
+// function hideAllSlides(x) {
+//     for (let slide of x) {
+//         slide.classList.remove("slide-item-visible")
+//         // slide.classList.add("slide-item-hidden")
+//     }
+// }
 
-function moveToNextSlide(x) {
-    hideAllSlides(x)
-    let totalSlides = x.length
+// function moveToNextSlide(x) {
+//     hideAllSlides(x)
+//     let totalSlides = x.length
 
 
-    if (slidePosition === totalSlides - 1) {
-        slidePosition = 0
-    } else {
-        slidePosition++
-    }
+//     if (slidePosition === totalSlides - 1) {
+//         slidePosition = 0
+//     } else {
+//         slidePosition++
+//     }
 
-    //x[slidePosition].classList.remove("slide-item-hidden")
-    x[slidePosition].classList.add("slide-item-visible")
-}
+//     //x[slidePosition].classList.remove("slide-item-hidden")
+//     x[slidePosition].classList.add("slide-item-visible")
+// }
 
-function moveToPrevSlide(x) {
-    hideAllSlides(x)
-    let totalSlides = x.length
+// function moveToPrevSlide(x) {
+//     hideAllSlides(x)
+//     let totalSlides = x.length
 
-    if (slidePosition === 0) {
-        slidePosition = totalSlides - 1
-    } else {
-        slidePosition--
-    }
+//     if (slidePosition === 0) {
+//         slidePosition = totalSlides - 1
+//     } else {
+//         slidePosition--
+//     }
 
-    //x[slidePosition].classList.remove("slide-item-hidden")
-    x[slidePosition].classList.add("slide-item-visible")
-}
+//     //x[slidePosition].classList.remove("slide-item-hidden")
+//     x[slidePosition].classList.add("slide-item-visible")
+// }
 
 // FOOTER TYPED
 
