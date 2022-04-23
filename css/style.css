@@ -1173,12 +1173,15 @@ nav.open .links {
      text-align: center;
 }
 
+.project-preview a {
+     z-index: 10
+}
+
 .project-preview i {
      font-size: 3rem;
      padding-bottom: var(--spacer-md);
      color: var(--primary-clr);
      transition: .3s;
-     z-index: 10;
      cursor: pointer;
 }
 
@@ -1913,6 +1916,15 @@ footer .footer-circle {
           font-size: 1.4vw;
      }
 
+     .modal .project-preview i {
+          font-size: 2.5rem;
+     }
+
+     .modal .project-preview .preview-btn {
+          width: 88px;
+          height: 36px;
+          padding: 0;
+     }
 
 
 }
@@ -2015,8 +2027,8 @@ footer .footer-circle {
 
      .modal .project-preview .preview-btn {
           font-size: .7rem;
-          width: 74px;
-          height: 43px;
+          width: 65px;
+          height: 33px;
           border-radius: 18px;
      }
 }

@@ -262,7 +262,7 @@ sr.reveal('.portfolio .section-body')
 sr.reveal('.about .section-header')
 sr.reveal('.about .about-img')
 sr.reveal('.about .about-text', { origin: 'bottom' })
-sr.reveal('.footer-circle, .social-media-wrap')
+
 
 // LOADING PAGE
 
