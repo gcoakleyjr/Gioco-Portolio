@@ -8,6 +8,8 @@ const serviceCardOverlay = document.querySelectorAll(".services-overlay")
 const serviceCloseOverlay = document.querySelectorAll(".close-btn-wrapper")
 const serviceOpenOverlay = document.querySelectorAll(".btn-read-open")
 
+const toggleAccordion = document.querySelectorAll('.toggle-accordion')
+
 const topColumn = document.querySelector(".column-top")
 const botColumn = document.querySelector(".column-bot")
 const cardSection = document.querySelector(".card-section")
@@ -62,6 +64,20 @@ function getRotatableIndex(curr, length, inc) {
     }
 }
 
+// PORTFOLIO ACCORDION
+
+toggleAccordion.forEach((item, i) => item.addEventListener('click', function () {
+    if (this.parentElement.classList.contains('active-accordion')) {
+        this.parentElement.classList.remove('active-accordion')
+    } else {
+        const activeItem = document.getElementsByClassName('active-accordion');
+        if (activeItem[0]) {
+            activeItem[0].classList.remove('active-accordion')
+        }
+        this.parentElement.classList.add('active-accordion')
+    }
+}))
+
 // PORTFOLIO MODAL
 
 openPortfolioModal.forEach((grid, index) => {
@@ -109,110 +125,7 @@ openPortfolioModal.forEach((grid, index) => {
     })
 })
 
-// closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
-//     e.preventDefault()
 
-//     const currModal = modal[index];
-//     currModal.close()
-//     currModal.classList.remove("modal-active")
-// }))
-
-
-// let slidePosition = 0
-
-// openPortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
-//     e.preventDefault()
-
-//     const currModal = modal[index];
-
-//     currModal.classList.add("modal-active")
-
-//     currModal.showModal()
-//     let slides = currModal.querySelectorAll(".slide-item")
-//     console.log(slides)
-
-//     let slideNext = currModal.querySelector(".slide-next")
-//     slideNext.addEventListener("click", () => moveToNextSlide(slides))
-
-
-
-//     let slidePrev = currModal.querySelector(".slide-prev")
-//     slidePrev.addEventListener("click", () => moveToPrevSlide(slides))
-
-//     console.log(slidePrev)
-//     console.log(slideNext)
-
-//     let slideActions = currModal.querySelector(".slide-actions")
-
-//     if (slides.length < 2) {
-//         slideActions.style.display = "none"
-//     } else {
-//         return
-//     }
-
-// }))
-
-// closePortfolioModal.forEach((grid, index) => grid.addEventListener("click", (e) => {
-//     e.preventDefault()
-
-//     const currModal = modal[index];
-//     currModal.close()
-//     currModal.classList.remove("modal-active")
-
-//     let slideNext = currModal.querySelector(".slide-next")
-//     slideNext.removeEventListener("click", () => { })
-
-
-
-//     let slidePrev = currModal.querySelector(".slide-prev")
-//     slidePrev.removeEventListener("click", () => { })
-
-
-// }))
-
-
-
-
-
-
-
-
-
-// function hideAllSlides(x) {
-//     for (let slide of x) {
-//         slide.classList.remove("slide-item-visible")
-//         // slide.classList.add("slide-item-hidden")
-//     }
-// }
-
-// function moveToNextSlide(x) {
-//     hideAllSlides(x)
-//     let totalSlides = x.length
-
-
-//     if (slidePosition === totalSlides - 1) {
-//         slidePosition = 0
-//     } else {
-//         slidePosition++
-//     }
-
-//     //x[slidePosition].classList.remove("slide-item-hidden")
-//     x[slidePosition].classList.add("slide-item-visible")
-// }
-
-// function moveToPrevSlide(x) {
-//     hideAllSlides(x)
-//     let totalSlides = x.length
-
-//     if (slidePosition === 0) {
-//         slidePosition = totalSlides - 1
-//     } else {
-//         slidePosition--
-//     }
-
-//     //x[slidePosition].classList.remove("slide-item-hidden")
-//     x[slidePosition].classList.add("slide-item-visible")
-// }
 
 // FOOTER TYPED
 
@@ -252,8 +165,8 @@ const sr = ScrollReveal({
     delay: 400,
 })
 
-sr.reveal('.nav-bar', { delay: 2600 })
-sr.reveal('.header-content', { delay: 3200 })
+sr.reveal('.nav-bar', { delay: 1600 })
+sr.reveal('.header-content', { delay: 2200 })
 sr.reveal('.services .section-header')
 sr.reveal('.services .mouse-wrapper')
 sr.reveal('.cards')
@@ -269,11 +182,11 @@ sr.reveal('.about .about-text', { origin: 'bottom' })
 
 setTimeout(function () {
     $('.loader-wrapper').addClass("slide-out");
-}, 2500)
+}, 1500)
 
 setTimeout(function () {
     $('.preload').removeClass('preload');
-}, 2500)
+}, 1500)
 
 
 // SERVICES CARDS
@@ -300,8 +213,8 @@ serviceCloseOverlay.forEach((closeBtn, index) => closeBtn.addEventListener("clic
 // SCROLL
 
 window.addEventListener("scroll", () => {
-    scrollCard()
-    scrollAbout()
+    // scrollCard()
+    // scrollAbout()
 })
 
 function checkScroll(element) {
