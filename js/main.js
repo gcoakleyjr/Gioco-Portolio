@@ -244,10 +244,10 @@ function scrollAbout() {
         let Y = window.scrollY
         let query = window.matchMedia("(max-width: 800px)")
 
-        aboutEmailShape.style.transform = `translateY(-${Y / 25 + -120}px)`
-        aboutShape3.style.transform = `translateY(${Y / 25 + -120}px)`
-        aboutShape2.style.transform = `translateY(-${Y / 23 + -120}px)`
-        aboutShape1.style.transform = `translateY(${Y / 23 + -120}px)`
+        // aboutEmailShape.style.transform = `translateY(-${Y / 25 + -120}px)`
+        // aboutShape3.style.transform = `translateY(${Y / 25 + -120}px)`
+        // aboutShape2.style.transform = `translateY(-${Y / 23 + -120}px)`
+        // aboutShape1.style.transform = `translateY(${Y / 23 + -120}px)`
 
         if (query.matches) {
             return
