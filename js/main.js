@@ -161,12 +161,12 @@ links.forEach(link => link.addEventListener("click", () => closeMenu()))
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: 2500,
-    delay: 400,
+    duration: 2000,
+    delay: 100,
 })
 
-sr.reveal('.nav-bar', { delay: 1600 })
-sr.reveal('.header-content', { delay: 2200 })
+sr.reveal('.header-content', { delay: 1200 })
+sr.reveal('.portfolio .first-project')
 sr.reveal('.services .section-header')
 sr.reveal('.services .mouse-wrapper')
 sr.reveal('.cards')
@@ -182,11 +182,11 @@ sr.reveal('.about .about-text', { origin: 'bottom' })
 
 setTimeout(function () {
     $('.loader-wrapper').addClass("slide-out");
-}, 1500)
+}, 1000)
 
 setTimeout(function () {
     $('.preload').removeClass('preload');
-}, 1500)
+}, 1000)
 
 
 // SERVICES CARDS

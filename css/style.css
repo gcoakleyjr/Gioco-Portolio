@@ -162,7 +162,7 @@ img {
      font-size: 1.05rem;
      text-transform: uppercase;
      font-weight: 500;
-     transition: 0.3s;
+     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
@@ -254,7 +254,7 @@ h1 {
      align-items: center;
      justify-content: flex-end;
      display: none;
-     position: fixed;
+     position: absolute;
      right: 5%;
 }
 
@@ -264,7 +264,7 @@ h1 {
      height: 3px;
      border-radius: 3px;
      background-color: var(--primary-clr);
-     transition: 0.5s;
+     transition: transform 0.5s;
 }
 
 .bar:before,
@@ -806,7 +806,7 @@ nav.open .links {
 .accordion-arrow-wrapper {
      padding: 15px 10px;
      border-radius: 50%;
-     transition: .5s;
+     transition: background-color .5s;
 }
 
 .toggle-accordion:hover .accordion-arrow-wrapper {
@@ -821,7 +821,7 @@ nav.open .links {
      position: relative;
      height: 0;
      overflow: hidden;
-     transition: .5s;
+     transition: height .5s, opacity .5s, margin .5s;
      display: flex;
      flex-direction: row;
      margin: 0 auto;
@@ -844,7 +844,7 @@ nav.open .links {
      padding: 20px 40px;
      border-radius: var(--spacer-md);
      border: 0.5px solid rgba(95, 95, 95, 0.253);
-     transition: .5s ease-in;
+     transition: border .5s ease-in, background-color .5s;
      align-items: center;
      cursor: pointer;
 }
@@ -909,22 +909,22 @@ nav.open .links {
      border: 1px solid var(--primary-clr);
      border-radius: 25px;
      padding: 14px 10px;
-     transition: .3s;
+     transition: color .3s, background-color .3s, border .3s;
      z-index: 10;
+     cursor: pointer;
 }
 
 .portfolio-info-wrapper .preview-btn:hover {
      color: var(--light-clr-one);
      background-color: var(--accent-clr-two);
      border: none;
-     cursor: pointer;
 }
 
 .portfolio-info-wrapper i {
      font-size: 3rem;
      padding-bottom: var(--spacer-md);
      color: var(--light-clr-one);
-     transition: .3s;
+     transition: color .3s;
      cursor: pointer;
 }
 
@@ -949,7 +949,7 @@ nav.open .links {
      width: 54px;
      height: 54px;
      border-radius: 10px;
-     transition: .5s;
+     transition: background-color .5s;
      border: 1px solid rgba(255, 255, 255, 0.192);
      background-color: #353535;
      cursor: pointer;
@@ -964,12 +964,9 @@ nav.open .links {
 
 .accordion .tool-icon {
      width: 60%;
-     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(343deg) brightness(103%) contrast(104%);
 }
 
-.accordion .tools:hover .tool-icon {
-     filter: invert(78%) sepia(86%) saturate(1587%) hue-rotate(334deg) brightness(100%) contrast(102%)
-}
+
 
 /**
  * Tooltip Styles
@@ -1039,13 +1036,14 @@ nav.open .links {
 [data-tooltip]:after {
      z-index: 1000;
      padding: 8px;
-     width: 160px;
+     width: 110px;
      background-color: #000;
      background-color: hsla(0, 0%, 20%, 0.9);
      color: var(--accent-clr-two);
      content: attr(data-tooltip);
-     font-size: 14px;
+     font-size: 10px;
      line-height: 1.2;
+     text-align: center;
 }
 
 /* Directions */
@@ -1074,7 +1072,7 @@ nav.open .links {
 [data-tooltip]:after,
 .tooltip:after,
 .tooltip-top:after {
-     margin-left: -80px;
+     margin-left: -55px;
 }
 
 [data-tooltip]:hover:before,
@@ -1193,18 +1191,18 @@ nav.open .links {
      background-color: var(--light-clr-three);
 } */
 
-.background-bg {
+/* .background-bg {
      position: absolute;
      width: 100%;
      height: 540px;
      top: 0;
      left: 0;
      background-color: var(--primary-clr);
-}
+} */
 
 
 
-.filter {
+/* .filter {
      width: 100%;
      display: flex;
      align-items: center;
@@ -1233,7 +1231,7 @@ nav.open .links {
 .filter-btn.active {
      background-color: var(--light-clr-one);
      color: var(--primary-clr)
-}
+} */
 
 .portfolio .overlay h4 {
      position: absolute;
@@ -1297,7 +1295,7 @@ nav.open .links {
      left: 50%;
      transform: translate(-50%, -50%);
      transform-origin: center;
-     transition: 0.5s;
+     transition: transform 0.5s;
 }
 
 .gallery-image .img-overlay {
@@ -1316,7 +1314,7 @@ nav.open .links {
      padding: var(--spacer-lrg) 3.2rem;
      text-align: center;
      opacity: 0;
-     transition: .5s;
+     transition: opacity .5s;
 }
 
 .img-overlay .plus {
@@ -1417,7 +1415,6 @@ nav.open .links {
 .modal::backdrop {
      background: rgb(0, 0, 0);
      opacity: .5;
-     backdrop-filter: blur(10px);
 }
 
 .modal .modal-position {
@@ -1480,13 +1477,13 @@ nav.open .links {
 }
 
 .modal .slide-actions button {
-     font-size: 3rem;
+     font-size: 2rem;
      color: var(--primary-clr);
      background-color: transparent;
      border: none;
      z-index: 100;
      cursor: pointer;
-     transition: .5s;
+     transition: transform .5s;
 }
 
 .modal .slide-actions button:hover {
@@ -1539,7 +1536,7 @@ nav.open .links {
 
 
 .modal .modal-description img {
-     transition: 0.3s;
+     transition: transform 0.3s;
 }
 
 .modal .modal-description img:hover {
@@ -1561,7 +1558,7 @@ nav.open .links {
      font-size: 3rem;
      padding-bottom: var(--spacer-md);
      color: var(--primary-clr);
-     transition: .3s;
+     transition: color .3s;
      cursor: pointer;
 }
 
@@ -1573,7 +1570,7 @@ nav.open .links {
      cursor: pointer;
      font-weight: 600;
      z-index: 10;
-     transition: .3s;
+     transition: color .3s;
 }
 
 .modal-description .text a:hover {
@@ -1586,15 +1583,16 @@ nav.open .links {
      border: 1px solid var(--primary-clr);
      border-radius: 25px;
      padding: 14px 10px;
-     transition: .3s;
+     transition: color .3s, background-color .3s;
      z-index: 10;
+     border: none;
 }
 
 
 .modal .project-preview .preview-btn:hover {
      color: var(--light-clr-one);
      background-color: var(--accent-clr-two);
-     border: none;
+
 }
 
 
@@ -1649,7 +1647,7 @@ nav.open .links {
      width: 15vw;
      height: 15vw;
      position: absolute;
-     transition: .5s;
+     transition: transform .5s;
 }
 
 .about .photo-me:hover+.overlay-about .ab-sh-1 {
