@@ -1736,8 +1736,8 @@ video {
 
 footer .footer-circle {
      position: absolute;
-     width: 460px;
-     height: 460px;
+     width: 430px;
+     height: 430px;
      border-radius: 50%;
      background-color: var(--light-clr-one);
      z-index: 10;
@@ -2104,8 +2104,8 @@ footer .footer-circle {
      }
 
      footer .footer-circle {
-          width: 380px;
-          height: 380px;
+          width: 350px;
+          height: 350px;
      }
 
      .footer h4 {
