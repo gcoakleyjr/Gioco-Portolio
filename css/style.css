@@ -212,7 +212,8 @@ h1 {
      padding-bottom: 200px;
 }
 
-.links a {
+.links a,
+.about a {
      display: inline-block;
      padding: .9rem 1.2rem;
      color: var(--primary-clr);
@@ -223,7 +224,12 @@ h1 {
      transition: 0.3s;
 }
 
-.links a.active {
+.about a.active {
+     transform: translateX(-19px)
+}
+
+.links a.active,
+.about a.active {
      background-color: var(--accent-clr-two);
      color: var(--light-clr-one);
      border-top-left-radius: 2rem;
@@ -234,14 +240,16 @@ h1 {
      margin-left: 1rem;
 }
 
-.links a:hover {
+.links a:hover,
+.about a:hover {
      color: var(--accent-clr-two);
 }
 
-.links a.active:hover {
+.links a.active:hover,
+.about a.active:hover {
      color: var(--light-clr-one);
      background-color: var(--accent-clr-two-dark);
-     transform: translateY(-2px);
+     transform: translate(-19px -2px);
      box-shadow: 15px 8px var(--accent-clr);
 }
 
