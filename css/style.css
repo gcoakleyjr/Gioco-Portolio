@@ -942,6 +942,12 @@ nav.open .links {
      overflow: hidden;
      aspect-ratio: .9;
      margin-right: var(--spacer-lrg);
+     display: flex;
+     justify-content: center;
+}
+
+video {
+     height: 100%;
 }
 
 .portfolio-image img {
@@ -2459,8 +2465,8 @@ footer .footer-circle {
      }
 
      footer .footer-circle {
-          width: 330px;
-          height: 330px;
+          width: 300px;
+          height: 300px;
      }
 
      .footer h4 {
