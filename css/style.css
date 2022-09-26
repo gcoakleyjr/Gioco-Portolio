@@ -830,6 +830,7 @@ nav.open .links {
      position: -webkit-sticky;
      top: 0;
      background-color: var(--primary-clr);
+     border-radius: var(--spacer-md);
 }
 
 /* .contentBx.active-accordian .accordion-title h2 {
@@ -862,7 +863,7 @@ nav.open .links {
      background-color: var(--primary-clr);
      padding: 20px 40px;
      border-radius: var(--spacer-md);
-     border: 0.5px solid rgba(95, 95, 95, 0.253);
+     border: 0.5px solid rgba(141, 141, 141, 0.53);
      transition: border .5s ease-in, background-color .5s;
      align-items: center;
      cursor: pointer;
