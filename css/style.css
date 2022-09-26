@@ -792,6 +792,10 @@ nav.open .links {
 /* PORTFOLIO ACCORDIAN
 /*******************************************/
 
+.section.portfolio {
+     overflow: visible;
+}
+
 .accordion {
      max-width: 100%;
      margin-top: 100px;
@@ -822,7 +826,10 @@ nav.open .links {
 }
 
 .accordion .contentBx {
-     position: relative;
+     position: sticky;
+     position: -webkit-sticky;
+     top: 0;
+     background-color: var(--primary-clr);
 }
 
 /* .contentBx.active-accordian .accordion-title h2 {
@@ -832,7 +839,7 @@ nav.open .links {
 .accordion .contentBx .content {
      position: relative;
      height: 0;
-     overflow: hidden;
+     /* overflow: hidden; */
      transition: height .5s, opacity .5s, margin .5s;
      display: flex;
      flex-direction: row;
@@ -843,7 +850,7 @@ nav.open .links {
 }
 
 .accordion .contentBx.active-accordion .content {
-     height: 85vh;
+     height: 88vh;
      margin: var(--spacer-xlrg) auto;
      opacity: 1;
 }
@@ -934,7 +941,7 @@ nav.open .links {
 
 .portfolio-info-wrapper i {
      font-size: 3rem;
-     padding-bottom: var(--spacer-md);
+     padding-bottom: 2.5rem;
      color: var(--light-clr-one);
      transition: color .3s;
      cursor: pointer;
@@ -2392,10 +2399,13 @@ footer .footer-circle {
      }
 
      .accordion .contentBx.active-accordion .content {
-          height: 920px
+          height: 85vh;
+          margin: var(--spacer-md) auto;
      }
 
-
+     .accordion .contentBx .content {
+          justify-content: space-evenly;
+     }
 
      .accordion-title {
           margin-left: 0;
@@ -2426,6 +2436,22 @@ footer .footer-circle {
           padding: 12px 10px;
      }
 
+     .portfolio-info-wrapper i {
+          font-size: 2.3rem;
+          padding-bottom: 1.2rem;
+     }
+
+     .portfolio-info-wrapper .preview-btn {
+          width: 82px;
+          height: 2.3rem;
+          padding: 0;
+          font-size: .8rem;
+     }
+
+     .accordion .tools {
+          width: 35px;
+          height: 35px;
+     }
 
 }
 
@@ -2533,23 +2559,18 @@ footer .footer-circle {
           border-radius: 18px;
      }
 
+     .portfolio-info-wrapper h2 {
+          font-size: 1.5rem;
+          margin-bottom: var(--spacer);
+     }
+
      .portfolio-info-wrapper {
           max-width: 300px;
      }
 
      .portfolio-image {
-          max-width: 300px;
-     }
-
-     .portfolio-info-wrapper .preview-btn {
-          width: 82px;
-          height: 2.3rem;
-          padding: 0;
-          font-size: .8rem;
-     }
-
-     .portfolio-info-wrapper i {
-          font-size: 2.3rem;
+          max-width: 220px;
+          margin-bottom: var(--spacer);
      }
 
      .accordion .contentBx .content.arch-content {
@@ -2557,8 +2578,24 @@ footer .footer-circle {
      }
 
      .arch-content .portfolio-info-wrapper p {
-          margin-bottom: var(--spacer-md);
+          font-size: 9px;
+          margin-bottom: var(--spacer);
      }
+
+     .portfolio-info-wrapper p {
+          font-size: 9px;
+          margin-bottom: var(--spacer);
+     }
+
+     .accordion .contentBx.active-accordion .content {
+          margin: var(--spacer) auto;
+          text-align: center;
+     }
+
+     .portfolio-info-wrapper div {
+          justify-content: center;
+     }
+
 
 }
 

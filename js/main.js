@@ -66,17 +66,17 @@ function getRotatableIndex(curr, length, inc) {
 
 // PORTFOLIO ACCORDION
 
-toggleAccordion.forEach((item, i) => item.addEventListener('click', function () {
-    if (this.parentElement.classList.contains('active-accordion')) {
-        this.parentElement.classList.remove('active-accordion')
-    } else {
-        const activeItem = document.getElementsByClassName('active-accordion');
-        if (activeItem[0]) {
-            activeItem[0].classList.remove('active-accordion')
-        }
-        this.parentElement.classList.add('active-accordion')
-    }
-}))
+// toggleAccordion.forEach((item, i) => item.addEventListener('click', function () {
+//     if (this.parentElement.classList.contains('active-accordion')) {
+//         this.parentElement.classList.remove('active-accordion')
+//     } else {
+//         const activeItem = document.getElementsByClassName('active-accordion');
+//         if (activeItem[0]) {
+//             activeItem[0].classList.remove('active-accordion')
+//         }
+//         this.parentElement.classList.add('active-accordion')
+//     }
+// }))
 
 // PORTFOLIO MODAL
 
